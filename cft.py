@@ -14,7 +14,7 @@ def q(beta):
 @jit
 def reduced_chi_0(beta, c):
     """ calculates reduced (without the factor of eta) character of vacuum """
-    return (beta**0.5) * q(beta)**( -(c-1) / 12) * (1-q(beta))**2
+    return (beta**0.5) * q(beta)**( -(c-1) / 12) * ((1-q(beta))**2)
 
 @jit
 def reduced_chi_delta(delta, beta, c):
