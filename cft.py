@@ -14,12 +14,12 @@ def q(beta):
 @jit
 def reduced_chi_0(beta, c):
     """ calculates reduced (without the factor of eta) character of vacuum """
-    return q(beta)**( (c-1) / 12) * (1-q(beta)) 
+    return (beta**0.5) * q(beta)**( -(c-1) / 12) * (1-q(beta))**2
 
 @jit
 def reduced_chi_delta(delta, beta, c):
     """ calculates reduced (without the factor of eta) character of primary with scaling dimension delta and no spin"""
-    return  q(beta)**(delta - (c - 1) / 12) 
+    return  (beta**0.5) * q(beta)**(delta - (c - 1) / 12) 
 
 @jit
 def reduced_partition_function_spinless(deltas, beta, c):
@@ -27,6 +27,6 @@ def reduced_partition_function_spinless(deltas, beta, c):
         Length of deltas corresponds to trunctation length.
     """
     characters = vmap(reduced_chi_delta, in_axes=(0,None,None), out_axes=0)(deltas, beta, c)
-    return jnp.sum(characters) + reduced_chi_0(beta,c)
+    return  (jnp.sum(characters) + reduced_chi_0(beta,c))
     
 
