@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#
+/RL-implementation/logs
+/RL-implementation/models
