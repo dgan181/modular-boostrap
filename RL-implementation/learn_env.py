@@ -8,8 +8,8 @@ import sys
 # i = int(sys.argv[2])
 
 # print(f"Learning dim:{dim}, i:{i}")
-number = 1678007869
-which = 450000
+number = 1
+which = 1
 model_train=f"models/{number}/{which}"
 
 logdir = f"logs/{int(time.time())}/"
