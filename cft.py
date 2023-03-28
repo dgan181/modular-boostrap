@@ -81,3 +81,5 @@ def laguerre_at_0(order, x):
     """Vector with odd Laguerre polynomials at delta = 0
     """
     return laguerre_at_x(order, x) - 2 * jnp.exp(-2 * jnp.pi) * laguerre_at_x(order, x + 1) + jnp.exp(-4 * jnp.pi) * laguerre_at_x(order, x + 2) 
+
+laguerre_deltas = vmap(laguerre_at_x, in_axes = (None, 0), out_axes=1)
