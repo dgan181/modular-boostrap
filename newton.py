@@ -18,7 +18,7 @@ from matplotlib.pyplot import cm
 from jax.config import config
 config.update("jax_debug_nans", True)
 
-from jaxopt import ScipyRootFinding
+# from jaxopt import ScipyRootFinding
 from scipy import optimize
 
 c = 12
