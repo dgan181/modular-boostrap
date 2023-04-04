@@ -25,8 +25,9 @@ jnp.set_printoptions(precision=20)
 rng = random.PRNGKey(1)
 
 # Define a model
-c = 4 # <- change this to generate values for a different 
+c = 12 # <- change this to generate values for a different 
 
+print(f"c = {c}")
 
 list_losses = []
 list_params = []
@@ -104,7 +105,8 @@ for p in range(20):
     list_guesses.append(deltas_g)
     h += 1
 
-print("Saving parameters in directory spinless-parameters")
-jnp.save(f"{PATH}/spinless-parameters/c-{c}",np.array(list_params, dtype=object))
+if not (len(list_params) == 0):
+    print("Saving parameters in directory spinless-parameters")
+    jnp.save(f"{PATH}/spinless-parameters/c-{c}",np.array(list_params, dtype=object))
 
-# To load `jnp.load(/path/to/.npy)`
+# To load c4 = jnp.load(f"{PATH}/spinless-parameters/c-4.npy", allow_pickle=True)
