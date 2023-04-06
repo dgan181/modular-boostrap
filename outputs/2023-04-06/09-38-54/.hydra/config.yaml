@@ -1,0 +1,12 @@
+jax_settings:
+  precision: 20
+random_seed: 1
+model:
+  central_charge: 12
+  initializations:
+    deltas:
+      _target_: jax.numpy.array
+      delta_vals:
+      - 2.13
+      - 3.4
+      - 5.1
